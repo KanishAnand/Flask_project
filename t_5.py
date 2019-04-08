@@ -6,26 +6,26 @@ def dectobin(n):
 
 def two_comp(lst):
 	val=0
-	val -= lst[3]*8
-	for i in range(3):
+	val -= lst[4]*16
+	for i in range(4):
 		val += lst[i]*pow(2,i)
 	return val
 
 def one_comp(lst):
 	val=0
-	val -= lst[3]*8
+	val -= lst[4]*16
 
-	if lst[3] == 1:
+	if lst[4] == 1:
 		val += 1
-	for i in range(3):
+	for i in range(4):
 		val += lst[i]*pow(2,i)
 	return val
 
 def signed(lst):
 	val=0
-	for i in range(3):
+	for i in range(4):
 		val += lst[i]*pow(2,i)
-	if lst[3] == 1:
+	if lst[4] == 1:
 		val = -val
 	return val
 
@@ -39,7 +39,7 @@ i=0
 arr_a=[]
 arr_b=[]
 
-while i < 4: #loop to convert a and b into binary arrays
+while i < 5: #loop to convert a and b into binary arrays
 	arr_a.insert(i,val_a % 10)
 	arr_b.insert(i,val_b % 10)
 	val_a //= 10
@@ -50,12 +50,12 @@ result=[]
 carry=0
 i=0
 
-for i in range(4): #loop to do binary addition
+for i in range(5): #loop to do binary addition
  	result.insert(i,arr_a[i]^arr_b[i]^carry)
  	carry = arr_a[i]&arr_b[i]
 
 binary_val=dectobin(binary_sum)
-result_binary=binary_val
+
 # for i in result:
 # 	s = str(i)
 # 	print(s)
@@ -64,14 +64,15 @@ result_binary=binary_val
 # print(result)
 # result_binary = result_binary.join(result)
 
+result_binary = binary_val
 result_unsigned = binary_sum
 
 if carry == 1:
-	result_binary = "overflow (" + str(binary_val) + ")"
-
+	result_binary = "overflow(" + str(binary_val) + ")"
 answer_binary = result_binary
-answer_unsigned = binary_sum
-if binary_sum > 15:
+
+result_unsigned = binary_sum
+if binary_sum > 31:
 	result_unsigned = "overflow (" + str(binary_sum) + ")"
 answer_unsigned = result_unsigned
 
@@ -80,7 +81,7 @@ b_signed = signed(arr_b)
 result_signed = a_signed + b_signed
 answer_signed = result_signed
 
-if result_signed < -7 or result_signed > 7:
+if result_signed < -15 or result_signed > 15:
 	answer_signed = "overflow (" + str(result_signed) + ")"
 
 a_two_comp=two_comp(arr_a)
@@ -93,10 +94,10 @@ b_one_comp=one_comp(arr_b)
 result_one_comp=a_one_comp+b_one_comp
 answer_one_comp= result_one_comp
 
-if(result_two_comp < -8 or result_two_comp > 7 ):
+if(result_two_comp < -16 or result_two_comp > 15 ):
 	answer_two_comp="overflow (" + str(result_two_comp) + ")"
 
-if(result_one_comp < -7 or result_one_comp > 7 ):
+if(result_one_comp < -15 or result_one_comp > 15 ):
 	answer_one_comp="overflow (" + str(result_one_comp) + ")"
 
 print("binary representation:" ,answer_binary)
