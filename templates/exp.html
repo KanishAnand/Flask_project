@@ -8,6 +8,7 @@
   <p id="demo">anand<p>
   <button class="help">HELP</button>
   <script>
+    //var jj = {};
     $(document).ready(function(){
         $("button").click(function(){
           var arr={
@@ -20,11 +21,32 @@
             data: JSON.stringify(arr),
             contentType: 'application/json; charset=utf-8',
             dataType:'json',
-            async: true,
+            success:function(res){
+              console.log(res);
+              table_display(res);
+
+              //console.log($.parseJSON(res));
+            }
+            //console.log(JSON.parse(jj))
+
+            //async: true,
             //document.getElementById("demo").innerHTML = "kanish"
           });
         });
+        //console.log($.parseJSON(jj));
     });
+
+    function table_display(obj){
+      console.log(obj['Binary Representation']);
+      document.getElementById("r1").innerHTML = obj['Binary Representation'];
+      document.getElementById("r2").innerHTML = obj['Two Complement'];
+      document.getElementById("r3").innerHTML = obj['One Complement'];
+      document.getElementById("r4").innerHTML = obj['Unsigned Value'];
+      document.getElementById("r5").innerHTML = obj['Signed Value'];
+      //ob = JSON.parse(obj);
+      //console.log(JSON.parse(obj));
+    }
+    //console.log(jj);
       // function val(){
       //   //console.log("kanish")
       //   var xhttp = new XMLHttpRequest();
@@ -186,27 +208,27 @@
   <tr>
     <td>1</td>
     <td>Binary Rep</td>
-    <td>        </td>
+    <td id="r1"></td>
   </tr>
   <tr>
     <td>2</td>
     <td>2's Comp</td>
-    <td>         </td>
+    <td id="r2"></td>
   </tr>
   <tr>
     <td>3</td>
     <td>1's Comp</td>
-    <td>         </td>
+    <td id="r3"></td>
   </tr>
   <tr>
     <td>4</td>
     <td>Unsigned</td>
-    <td>        </td>
+    <td id="r4"></td>
   </tr>
   <tr>
     <td>5</td>
     <td>Signed</td>
-    <td>         </td>
+    <td id="r5"></td>
   </tr>
 </table>
 </div>

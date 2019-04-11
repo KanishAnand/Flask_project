@@ -17,8 +17,7 @@ def calculate():
 	# print(obj['var_1'])
 	print(var_1)
 	print(var_2)
-	fun(var_1,var_2);
-	return "5";
+	return fun(var_1,var_2);
 
 def bintodec(n):
     return int(n,2)
@@ -124,7 +123,17 @@ def fun(a,b):
 	print("signed value:" ,answer_signed)
 	print("two complement value:" ,answer_two_comp)
 	print("one complement value:" ,answer_one_comp)
-
+	obj = {
+	'Binary Representation':answer_binary,
+	'Unsigned Value':answer_unsigned,
+	'Signed Value':answer_signed,
+	'Signed Value':answer_signed,
+	'Two Complement':answer_two_comp,
+	'One Complement':answer_one_comp
+	}
+	jsonstr = json.dumps(obj);
+	print(jsonstr)
+	return jsonstr
 
 @app.route('/theory')
 def render_theory():
