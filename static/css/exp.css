@@ -1,0 +1,33 @@
+table,th,td{
+	border:2px solid black;
+}
+
+table{
+	border-collapse: collapse;
+}
+th,td{
+	text-align: center;
+}
+
+th{
+	padding:10px;
+	color:#D2691E;
+}
+
+.tab{
+	float:right;
+}
+
+h1{
+	text-align: center;
+}
+
+.help{
+	float:right;
+}
+
+.result{
+	position: relative;
+	top:510px;
+	left:50px;
+}

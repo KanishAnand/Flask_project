@@ -1,0 +1,214 @@
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="static/css/exp.css" rel="stylesheet">
+</head>
+<body>
+  <h1>INTEGER ARITHMETIC</h1>
+  <p id="demo">anand<p>
+  <button class="help">HELP</button>
+  <script>
+    $(document).ready(function(){
+        $("button").click(function(){
+          var arr={
+              var_1:'1001',
+              var_2:'1101'
+          };
+          $.ajax({
+            url:"http://localhost:5000/calculate",
+            type:'POST',
+            data: JSON.stringify(arr),
+            contentType: 'application/json; charset=utf-8',
+            dataType:'json',
+            async: true,
+            //document.getElementById("demo").innerHTML = "kanish"
+          });
+        });
+    });
+      // function val(){
+      //   //console.log("kanish")
+      //   var xhttp = new XMLHttpRequest();
+      //   xhttp.open("GET","http://localhost:5000/calculate",true);
+      //   xhttp.send();
+      //   xhttp.onreadystatechange = function(){
+      //     //console.log("kanish")
+      //     if(this.readyState == 4 && this.status == 200){
+      //       document.getElementById("demo").innerHTML = this.responesText;
+      //     }
+      //   }
+      // }
+     
+  </script>
+  <div class="tab">
+  <table>
+  <tr>
+    <th colspan="2">Binary Rep</th>
+    <th>2's Comp</th>
+    <th>1's Comp</th>
+    <th>Unsigned</th>
+    <th>Signed</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0000</td>
+      <td>0</td>
+      <td>+0</td>
+      <td>0</td>
+      <td>+0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>0001</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>0010</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>0011</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>0100</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>0101</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>0110</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>0111</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>1000</td>
+      <td>-8</td>
+      <td>-7</td>
+      <td>8</td>
+      <td>-0</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>1001</td>
+      <td>-7</td>
+      <td>-6</td>
+      <td>9</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>1010</td>
+      <td>-6</td>
+      <td>-5</td>
+      <td>10</td>
+      <td>-2</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>1011</td>
+      <td>-5</td>
+      <td>-4</td>
+      <td>11</td>
+      <td>-3</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>1100</td>
+      <td>-4</td>
+      <td>-3</td>
+      <td>12</td>
+      <td>-4</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>1101</td>
+      <td>-3</td>
+      <td>-2</td>
+      <td>13</td>
+      <td>-5</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>1110</td>
+      <td>-2</td>
+      <td>-1</td>
+      <td>14</td>
+      <td>-6</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>1111</td>
+      <td>-1</td>
+      <td>-0</td>
+      <td>15</td>
+      <td>-7</td>
+    </tr>
+  </table>
+</div>
+<button>ADD</button>
+<button>RESET</button>
+<button>SWITCH TO 5 BIT</button>
+<div class="result">
+<table>
+  <tr>
+    <td>1</td>
+    <td>Binary Rep</td>
+    <td>        </td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>2's Comp</td>
+    <td>         </td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>1's Comp</td>
+    <td>         </td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Unsigned</td>
+    <td>        </td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Signed</td>
+    <td>         </td>
+  </tr>
+</table>
+</div>
+  </body>
+</html>
