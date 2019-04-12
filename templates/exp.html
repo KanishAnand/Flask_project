@@ -2,19 +2,64 @@
 <head>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link href="static/css/exp.css" rel="stylesheet">
+<style>
+.selected{
+  background-color:  #FF0000;
+}
+</style>
 </head>
 <body>
   <h1>INTEGER ARITHMETIC</h1>
-  <p id="demo">anand<p>
   <button class="help">HELP</button>
   <script>
+    var count = 0;
+    var a=0,b=0;
     //var jj = {};
+    $(function(){
+      $('#usr_inp tr').on('click',function(){
+          ++count;
+          //console.log(typeof(this))
+          $(this).addClass("selected");
+          c=$(this).find('td:eq(1)').text();
+          if(count % 2 == 1){
+            if(count != 1){
+              $(obj_1).removeClass("selected");
+            }
+            obj_1 = this;
+            a=c;
+          }
+          else{
+            if(count != 2){
+              $(obj_2).removeClass("selected");
+            }
+            obj_2 = this
+            b=c;
+          }
+          console.log(a);
+          console.log(b);
+          //alert("jksdf");
+      });
+    });
+
+    $(function(){
+      $("#button_reset").click(function(){
+          console.log("FDK")
+          location.reload();
+        });
+    });
+
+
     $(document).ready(function(){
-        $("button").click(function(){
+        $("#button_add").click(function(){
+          if(b == 0){
+            alert("select two values");
+            return;
+          }
           var arr={
-              var_1:'1001',
-              var_2:'1101'
+              var_1:a,
+              var_2:b
           };
+         // $("tr").removeClass("selected");
           $.ajax({
             url:"http://localhost:5000/calculate",
             type:'POST',
@@ -62,7 +107,7 @@
      
   </script>
   <div class="tab">
-  <table>
+  <table id="usr_inp">
   <tr>
     <th colspan="2">Binary Rep</th>
     <th>2's Comp</th>
@@ -70,7 +115,7 @@
     <th>Unsigned</th>
     <th>Signed</th>
     </tr>
-    <tr>
+    <tr id="df">
       <td>1</td>
       <td>0000</td>
       <td>0</td>
@@ -200,8 +245,8 @@
     </tr>
   </table>
 </div>
-<button>ADD</button>
-<button>RESET</button>
+<button id="button_add">ADD</button>
+<button id="button_reset">RESET</button>
 <button>SWITCH TO 5 BIT</button>
 <div class="result">
 <table>
