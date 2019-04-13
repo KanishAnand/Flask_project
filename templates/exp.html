@@ -6,6 +6,9 @@
 .selected{
   background-color:  #FF0000;
 }
+.ans_output{
+  background-color: #008000;
+}
 </style>
 </head>
 <body>
@@ -48,7 +51,6 @@
         });
     });
 
-
     $(document).ready(function(){
         $("#button_add").click(function(){
           if(b == 0){
@@ -69,7 +71,7 @@
             success:function(res){
               console.log(res);
               table_display(res);
-
+              ans_display(res);
               //console.log($.parseJSON(res));
             }
             //console.log(JSON.parse(jj))
@@ -80,6 +82,30 @@
         });
         //console.log($.parseJSON(jj));
     });
+
+      function ans_display(obj){
+          var arr=[];
+          arr[1] = String(obj['Binary Representation']);
+          arr[2] = String(obj['Two Complement']);
+          arr[3] = String(obj['One Complement']);
+          arr[4] = String(obj['Unsigned Value']);
+          arr[5] = String(obj['Signed Value']);
+          var tb = document.getElementById("usr_inp");
+          for(var i=0,row; row = tb.rows[i];i++){
+            for(var j=0,col;col=row.cells[j];j++){
+              $(col).removeClass("ans_output");
+              var val=col.innerHTML;
+              //console.log(val);
+              //console.log("j");
+              if(val == arr[j]){
+                //console.log("D");
+                $(col).addClass("ans_output");
+              }
+            }
+          }
+      }
+    
+
 
     function table_display(obj){
       console.log(obj['Binary Representation']);
