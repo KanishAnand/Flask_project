@@ -9,6 +9,10 @@
 .ans_output{
   background-color: #008000;
 }
+
+#usr_inp{
+	font-size: 0.54em;
+}
 </style>
 </head>
 <body>
@@ -19,7 +23,7 @@
     var count = 0;
     var a=0,b=0;
     //var jj = {};
-    $(function(){                                      //Function to register clicks on the binary strings
+    $(function(){                                    //function to register clicks on the binary strings
       $('#usr_inp tr').on('click',function(){
           ++count;
           //console.log(typeof(this))
@@ -45,26 +49,26 @@
       });
     });
 
-    $(function(){                      //function to reload page
+    $(function(){                               //function to reload page
       $("#button_reset").click(function(){
           console.log("FDK")
           location.reload();
         });
     });
 
-	$(function(){                    //function to switch to the page for 5bit addition
-      $("#button_5bit").click(function(){
-          window.open("/exp_5bit", "_self");
+	$(function(){                              //function to switch to the page for 5bit addition
+      $("#button_4bit").click(function(){
+          window.open("/exp", "_self");
         });
     });
 
-	$(function(){                   //function to switch to the help page
+	$(function(){                             //function to switch to the help page
       $("#button_help").click(function(){
           window.open("/help", "_self");
         });
     });
 
-    $(document).ready(function(){    //function to send selected values for calculation once selected using ajax requests
+    $(document).ready(function(){             //function to send selected values for calculation once selected using ajax requests
         $("#button_add").click(function(){
           if(b == 0){
             alert("select two values");
@@ -76,7 +80,7 @@
           };
          // $("tr").removeClass("selected");
           $.ajax({
-            url:"http://localhost:5000/calculate",
+            url:"http://localhost:5000/calculate_5bit",
             type:'POST',
             data: JSON.stringify(arr),
             contentType: 'application/json; charset=utf-8',
@@ -149,7 +153,7 @@
   <div class="tab">
   <table id="usr_inp">
   <tr>
-    <th colspan="2" id="topleft" >Binary Rep</th>
+    <th colspan="2">Binary Rep</th>
     <th>2's Comp</th>
     <th>1's Comp</th>
     <th>Unsigned</th>
@@ -157,7 +161,7 @@
     </tr>
     <tr id="df">
       <td>1</td>
-      <td style="padding-left:60px ;padding-right:60px">0000</td>
+      <td style="padding-left:60px ;padding-right:60px">00000</td>
       <td style="padding-left:30px ;padding-right:30px">0</td>
       <td style="padding-left:30px ;padding-right:30px">+0</td>
       <td style="padding-left:30px ;padding-right:30px">0</td>
@@ -165,7 +169,7 @@
     </tr>
     <tr>
       <td>2</td>
-      <td>0001</td>
+      <td>00001</td>
       <td>1</td>
       <td>1</td>
       <td>1</td>
@@ -173,7 +177,7 @@
     </tr>
     <tr>
       <td>3</td>
-      <td>0010</td>
+      <td>00010</td>
       <td>2</td>
       <td>2</td>
       <td>2</td>
@@ -181,7 +185,7 @@
     </tr>
     <tr>
       <td>4</td>
-      <td>0011</td>
+      <td>00011</td>
       <td>3</td>
       <td>3</td>
       <td>3</td>
@@ -189,7 +193,7 @@
     </tr>
     <tr>
       <td>5</td>
-      <td>0100</td>
+      <td>00100</td>
       <td>4</td>
       <td>4</td>
       <td>4</td>
@@ -197,7 +201,7 @@
     </tr>
     <tr>
       <td>6</td>
-      <td>0101</td>
+      <td>00101</td>
       <td>5</td>
       <td>5</td>
       <td>5</td>
@@ -205,7 +209,7 @@
     </tr>
     <tr>
       <td>7</td>
-      <td>0110</td>
+      <td>00110</td>
       <td>6</td>
       <td>6</td>
       <td>6</td>
@@ -213,7 +217,7 @@
     </tr>
     <tr>
       <td>8</td>
-      <td>0111</td>
+      <td>00111</td>
       <td>7</td>
       <td>7</td>
       <td>7</td>
@@ -221,103 +225,231 @@
     </tr>
     <tr>
       <td>9</td>
-      <td>1000</td>
-      <td>-8</td>
-      <td>-7</td>
+      <td>01000</td>
       <td>8</td>
-      <td>-0</td>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
     </tr>
     <tr>
       <td>10</td>
-      <td>1001</td>
-      <td>-7</td>
-      <td>-6</td>
+      <td>01001</td>
       <td>9</td>
-      <td>-1</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
     </tr>
     <tr>
       <td>11</td>
-      <td>1010</td>
-      <td>-6</td>
-      <td>-5</td>
+      <td>01010</td>
       <td>10</td>
-      <td>-2</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
     </tr>
     <tr>
       <td>12</td>
-      <td>1011</td>
-      <td>-5</td>
-      <td>-4</td>
+      <td>01011</td>
       <td>11</td>
-      <td>-3</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
     </tr>
     <tr>
       <td>13</td>
-      <td>1100</td>
-      <td>-4</td>
-      <td>-3</td>
+      <td>01100</td>
       <td>12</td>
-      <td>-4</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
     </tr>
     <tr>
       <td>14</td>
-      <td>1101</td>
-      <td>-3</td>
-      <td>-2</td>
+      <td>01101</td>
       <td>13</td>
-      <td>-5</td>
+      <td>13</td>
+      <td>13</td>
+      <td>13</td>
     </tr>
     <tr>
       <td>15</td>
-      <td>1110</td>
-      <td>-2</td>
-      <td>-1</td>
+      <td>01110</td>
       <td>14</td>
-      <td>-6</td>
+      <td>14</td>
+      <td>14</td>
+      <td>14</td>
     </tr>
     <tr>
       <td>16</td>
-      <td>1111</td>
+      <td>01111</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+    </tr>
+	<tr>
+      <td>17</td>
+      <td>10000</td>
+      <td>-16</td>
+      <td>-15</td>
+      <td>16</td>
+      <td>-0</td>
+    </tr>
+	<tr>
+      <td>18</td>
+      <td>10001</td>
+      <td>-15</td>
+      <td>-14</td>
+      <td>17</td>
+      <td>-1</td>
+    </tr>
+	<tr>
+      <td>19</td>
+      <td>10010</td>
+      <td>-14</td>
+      <td>-13</td>
+      <td>18</td>
+      <td>-2</td>
+    </tr>
+	<tr>
+      <td>20</td>
+      <td>10011</td>
+      <td>-13</td>
+      <td>-12</td>
+      <td>19</td>
+      <td>-3</td>
+    </tr>
+	<tr>
+      <td>21</td>
+      <td>10100</td>
+      <td>-12</td>
+      <td>-11</td>
+      <td>20</td>
+      <td>-4</td>
+    </tr>
+	<tr>
+      <td>22</td>
+      <td>10101</td>
+      <td>-11</td>
+      <td>-10</td>
+      <td>20</td>
+      <td>-5</td>
+    </tr>
+	<tr>
+      <td>23</td>
+      <td>10110</td>
+      <td>-10</td>
+      <td>-9</td>
+      <td>22</td>
+      <td>-6</td>
+    </tr>
+	<tr>
+      <td>24</td>
+      <td>10111</td>
+      <td>-9</td>
+      <td>-8</td>
+      <td>23</td>
+      <td>-7</td>
+    </tr>
+	<tr>
+      <td>25</td>
+      <td>11000</td>
+      <td>-8</td>
+      <td>-7</td>
+      <td>24</td>
+      <td>-8</td>
+    </tr>
+	<tr>
+      <td>26</td>
+      <td>11001</td>
+      <td>-7</td>
+      <td>-6</td>
+      <td>25</td>
+      <td>-9</td>
+    </tr>
+	<tr>
+      <td>27</td>
+      <td>11010</td>
+      <td>-6</td>
+      <td>-5</td>
+      <td>26</td>
+      <td>-10</td>
+    </tr>
+	<tr>
+      <td>28</td>
+      <td>11011</td>
+      <td>-5</td>
+      <td>-4</td>
+      <td>27</td>
+      <td>-11</td>
+    </tr>
+	<tr>
+      <td>29</td>
+      <td>11100</td>
+      <td>-4</td>
+      <td>-3</td>
+      <td>28</td>
+      <td>-12</td>
+    </tr>
+	<tr>
+      <td>30</td>
+      <td>11101</td>
+      <td>-3</td>
+      <td>-2</td>
+      <td>29</td>
+      <td>-13</td>
+    </tr>
+	<tr>
+      <td>31</td>
+      <td>11110</td>
+      <td>-2</td>
+      <td>-1</td>
+      <td>30</td>
+      <td>-14</td>
+    </tr>
+	<tr>
+      <td>32</td>
+      <td>11111</td>
       <td>-1</td>
       <td>-0</td>
-      <td>15</td>
-      <td>-7</td>
+      <td>31</td>
+      <td>-15</td>
     </tr>
   </table>
 </div>
 <!--=============BUTTONS ================= -->
 <button id="button_add"><img src="/static/images/add_button.png"></img></button><br>
 <button id="button_reset"><img src="/static/images/reset_button.png"></img></button><br>
-<button id="button_5bit"><img src="/static/images/5bit_button.png"></img></button>
+<button id="button_4bit"><img src="/static/images/4bit_button.png"></img></button>
 <!--=============RESULTS TABLE================= -->
 <div class="result">
 <h2 style="color: #660000"> Results </h2>
 <table>
-  <tr>
-    <td id="col1">1</td>
-    <td style="color: #660000">Binary Rep</td>
-    <td id="r1">     </td>
-  </tr>
-  <tr>
-    <td id="col1">2</td>
-    <td style="color: #660000">2's Comp</td>
-    <td id="r2">	</td>
-  </tr>
-  <tr>
-    <td id="col1">3</td>
-    <td style="color: #660000">1's Comp</td>
-    <td id="r3">	</td>
-  </tr>
-  <tr>
-    <td id="col1">4</td>
-    <td style="color: #660000">Unsigned</td>
-    <td id="r4">	</td>
-  </tr>
-  <tr>
-    <td id="col1">5</td>
-    <td style="color: #660000">Signed</td>
-    <td id="r5">	</td>
-  </tr>
+	<tr>
+      <td id="col1">1</td>
+      <td style="color: #660000">Binary Rep</td>
+      <td id="r1">     </td>
+    </tr>
+    <tr>
+      <td id="col1">2</td>
+      <td style="color: #660000">2's Comp</td>
+      <td id="r2">	</td>
+    </tr>
+    <tr>
+      <td id="col1">3</td>
+      <td style="color: #660000">1's Comp</td>
+      <td id="r3">	</td>
+    </tr>
+    <tr>
+      <td id="col1">4</td>
+      <td style="color: #660000">Unsigned</td>
+      <td id="r4">	</td>
+    </tr>
+    <tr>
+      <td id="col1">5</td>
+      <td style="color: #660000">Signed</td>
+      <td id="r5">	</td>
+    </tr>
 </table>
 </div>
   </body>

@@ -1,0 +1,48 @@
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="static/css/exp.css" rel="stylesheet">
+<style>
+.selected{
+  background-color:  #FF0000;
+}
+.ans_output{
+  background-color: #008000;
+}
+p{
+	font-size: 2em;
+}
+
+button{
+	float: right;
+}
+</style>
+</head>
+<body>
+	<script>
+	$(function(){   //function to go back to the page for 4bit calculation
+	  $("#button_back").click(function(){
+		  window.open("/exp", "_self");
+		});
+	});
+	</script>
+  <h1>Basic Theory behind the application</h1>
+  <p>This application is basically designed to make the user understand the difference and similarities between different arithmetic representation of integers. The key idea is to be able to observe and understand that some of the arithmetic representation behave isomorhically and hence any of them could be interchangebly used at the backend without the knowledge of the user.</p>
+  <h1>How to use the application</h1>
+  <p>
+	  Step 1-  Select any two rows that you want to add and press the ADD button .
+  </p>
+  <p>
+	  Step 2- The  result will be highlighted as well as displayed in the results table.
+  </p>
+<p>
+  OVERFLOW- If the resultant of the two numbers cannot be represented in given number of "bits" , then it is an overflow  which is indicated by the overflow flags.( The actual values requiring higher number of bits will be displayed in the result table for reference)
+</p>
+<p>
+  Step 3- Press reset button for adding new set of numbers.
+  </p>
+</body>
+
+<button id="button_back"><img src="/static/images/back_button.png"></img></button>
+
+</html>
