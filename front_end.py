@@ -1,6 +1,9 @@
 import json
 from flask import Flask, render_template,request
+from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+
 
 @app.route("/")
 @app.route("/introduction")
@@ -9,14 +12,22 @@ def render_introduction():
 
 @app.route("/calculate",methods=['GET','POST'])
 def calculate():
-	print("dfs")
-	print(request.is_json)
+	#print("dfs")
+	#print(request.is_json)
+
 	var_1 = request.json['var_1']
 	var_2 = request.json['var_2']
+	# db = SQLAlchemy();
+	# db.inti_app(app)
+	
+	#db.create_all()
+	# db.session.add(var_1);
+	# db.session.add(var_2);
+	# db.session.commit();
 	# obj = json.loads(data)
 	# print(obj['var_1'])
-	print(var_1)
-	print(var_2)
+	#print(var_1)
+	#print(var_2)
 	return fun(var_1,var_2);
 
 def bintodec(n):
