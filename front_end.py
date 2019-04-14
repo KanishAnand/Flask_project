@@ -2,7 +2,19 @@ from t import *
 from t_5 import *
 import json
 from flask import Flask, render_template,request
+from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
+db=SQLAlchemy(app)
+
+class input(db.Model):
+	id = db.Column(db.Integer,primary_key=True)
+	value_1 = db.Column(db.String(10),unique=False)
+	value_2 = db.Column(db.String(10),unique=False)
+
+	def __init__(self,val_1,val_2):
+		self.value_1 = val_1
+		self.value_2 = val_2
 
 #ROUTES
 @app.route("/")
@@ -12,26 +24,27 @@ def render_introduction():
 
 @app.route("/calculate",methods=['GET','POST'])  #TO CALCULATE THE ANSWERS WHEN TWO BINARY NUMBERS ARE SENT FOR PROCESSING
 def calculate():
-	print("dfs")
-	print(request.is_json)
+	#print("dfs")
+	#print(request.is_json)
+
 	var_1 = request.json['var_1']
 	var_2 = request.json['var_2']
-	# obj = json.loads(data)
-	# print(obj['var_1'])
-	print(var_1)
-	print(var_2)
+	db.create_all()
+	val = input(var_1,var_2)
+	db.session.add(val)
+	db.session.commit()
 	return fun(var_1,var_2);
 
 @app.route("/calculate_5bit",methods=['GET','POST'])  #TO CALCULATE THE ANSWERS WHEN TWO BINARY 5-bit NUMBERS ARE SENT FOR PROCESSING
 def calculate_5bit():
-	print("dfs")
-	print(request.is_json)
+	#print("dfs")
+	#print(request.is_json)
 	var_1 = request.json['var_1']
 	var_2 = request.json['var_2']
 	# obj = json.loads(data)
 	# print(obj['var_1'])
-	print(var_1)
-	print(var_2)
+	#print(var_1)
+	#print(var_2)
 	return fun_5bit(var_1,var_2);
 
 @app.route('/theory')
