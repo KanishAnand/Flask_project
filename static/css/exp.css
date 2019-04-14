@@ -5,13 +5,23 @@ table,th,td{
 table{
 	border-collapse: collapse;
 }
+
+#usr_inp{
+	padding-right: 100px;
+}
+
 th,td{
 	text-align: center;
 }
 
 th{
+	font-size: 2em;
 	padding:10px;
-	color:#D2691E;
+	color:#660000;
+}
+
+td{
+	font-size: 2em;
 }
 
 .tab{
@@ -19,7 +29,9 @@ th{
 }
 
 h1{
+	font-size: 4em;
 	text-align: center;
+	color: #660000;
 }
 
 .help{
@@ -28,6 +40,21 @@ h1{
 
 .result{
 	position: relative;
-	top:510px;
+	top:20%;
 	left:50px;
+	overflow-x: hidden;
+}
+
+.button{
+	padding: 100px;
+}
+
+#r1,#r2,#r3,#r4,#r5{
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+#col1{
+	padding-left: 10px;
+	padding-right: 10px;
 }
