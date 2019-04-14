@@ -51,24 +51,19 @@ def fun_5bit(a,b):
 	result=[]
 	carry=0
 	i=0
-
+	print(arr_a)
+	print(arr_b)
 	for i in range(5): #loop to do binary addition
-	 	result.insert(i,arr_a[i]^arr_b[i]^carry)
-	 	carry = arr_a[i]&arr_b[i]
+		v = arr_a[i]^arr_b[i]
+		c1 = arr_a[i]&arr_b[i]
+		result.insert(i,v^carry)
+		carry = c1^(v&carry)
 
 	binary_val=dectobin(binary_sum)
 
-	# for i in result:
-	# 	s = str(i)
-	# 	print(s)
-	# 	result_binary  = int("".join(s))
-	# 	print(result_binary)
-	# print(result)
-	# result_binary = result_binary.join(result)
-
 	result_binary = binary_val
 	result_unsigned = binary_sum
-
+	print(carry)
 	if carry == 1:
 		result_binary = "overflow(" + str(binary_val) + ")"
 	answer_binary = result_binary
@@ -82,6 +77,9 @@ def fun_5bit(a,b):
 	b_signed = signed(arr_b)
 	result_signed = a_signed + b_signed
 	answer_signed = result_signed
+	
+	if(answer_signed == 0):
+	 	answer_signed = '+' + str(answer_signed)
 
 	if result_signed < -15 or result_signed > 15:
 		answer_signed = "overflow (" + str(result_signed) + ")"
@@ -119,5 +117,5 @@ def fun_5bit(a,b):
 	'One Complement':answer_one_comp
 	}
 	jsonstr = json.dumps(obj);
-	print(jsonstr)
+	#print(jsonstr)
 	return jsonstr

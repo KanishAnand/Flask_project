@@ -4,10 +4,10 @@
 <link href="static/css/exp.css" rel="stylesheet">
 <style>
 .selected{
-  background-color:  #FF0000;
+  background-color:  #FA8072;
 }
 .ans_output{
-  background-color: #008000;
+  background-color: #00FF7F;
 }
 </style>
 </head>
@@ -66,7 +66,8 @@
 
     $(document).ready(function(){    //function to send selected values for calculation once selected using ajax requests
         $("#button_add").click(function(){
-          if(b == 0){
+          console.log(typeof(0));
+          if(b === 0){
             alert("select two values");
             return;
           }

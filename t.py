@@ -53,18 +53,13 @@ def fun(a,b):
 	i=0
 
 	for i in range(4): #loop to do binary addition
-	 	result.insert(i,arr_a[i]^arr_b[i]^carry)
-	 	carry = arr_a[i]&arr_b[i]
+		v = arr_a[i]^arr_b[i]
+		c1 = arr_a[i]&arr_b[i]
+		result.insert(i,v^carry)
+		carry = c1^(v&carry)
 
 	binary_val=dectobin(binary_sum)
 	result_binary=binary_val
-	# for i in result:
-	# 	s = str(i)
-	# 	print(s)
-	# 	result_binary  = int("".join(s))
-	# 	print(result_binary)
-	# print(result)
-	# result_binary = result_binary.join(result)
 
 	result_unsigned = binary_sum
 
@@ -81,6 +76,9 @@ def fun(a,b):
 	b_signed = signed(arr_b)
 	result_signed = a_signed + b_signed
 	answer_signed = result_signed
+	print(type(answer_signed))
+	if(answer_signed == 0):
+	 	answer_signed = '+' + str(answer_signed)
 
 	if result_signed < -7 or result_signed > 7:
 		answer_signed = "overflow (" + str(result_signed) + ")"
