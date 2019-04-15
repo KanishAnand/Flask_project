@@ -7,7 +7,8 @@ table{
 }
 
 #usr_inp{
-	padding-right: 100px;
+	right: 150;
+	position: absolute;
 }
 
 th,td{
@@ -35,7 +36,10 @@ h1{
 }
 
 .help{
-	float:right;
+	top: 5;
+	right: 5;
+	position: absolute;
+	width: 3%;
 }
 
 .result{
@@ -45,9 +49,47 @@ h1{
 	overflow-x: hidden;
 }
 
-.button{
-	padding: 100px;
-}
+  .button {
+  left: 50;
+  width: 300;	
+  backface-visibility: hidden;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  background: linear-gradient(180deg,#f9f9f9 0%,#e0e0e0 100%);
+  border-radius: 100px;
+  border: 0.5px solid rgba(0%,0%,0%,0.2);
+  border-width: 0.5px 0.5px 0.5px 0.5px;
+  padding: 4px 22px 5px 22px;
+  box-shadow: 0px 1px 1px rgba(0%,0%,0%,0.6),0px 0px 5px rgba(255,255,255,1),0px 1px 0px 3px rgba(0,0,0,0.2),inset 0px 1px 0px rgba(255,255,255,1);
+    color: #273;
+  font-size: 16px;
+  font-family: Helvetica Neue;
+  font-weight: 900;
+  font-style: normal
+  }
+  .button > div {
+    color: #999;
+  font-size: 10px;
+  font-family: Helvetica Neue;
+  font-weight: initial;
+  font-style: normal;
+  text-align: center;
+  margin: 0px 0px 0px 0px
+  }
+  .button > i {
+    font-size: 1em;
+  border-radius: 0px;
+  border: 0px solid transparent;
+  border-width: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  position: static
+  }
+  .button > .ld {
+    font-size: initial
+  }
 
 #r1,#r2,#r3,#r4,#r5{
 	padding-left: 50px;
@@ -57,4 +99,11 @@ h1{
 #col1{
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+#button_back{
+	bottom: 30;
+	right: 30;
+	position: absolute;
+	width: 6%;
 }
