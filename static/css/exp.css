@@ -43,15 +43,15 @@ h1{
 }
 
 .result{
-	position: relative;
-	top:20%;
-	left:50px;
-	overflow-x: hidden;
+	position: absolute;
+	left: 50;
+	bottom: 80;
+	display: inline-block;
 }
 
   .button {
   left: 50;
-  width: 300;	
+  width: 300;
   backface-visibility: hidden;
   position: relative;
   cursor: pointer;
