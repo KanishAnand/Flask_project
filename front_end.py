@@ -41,6 +41,10 @@ def calculate_5bit():
 	#print(request.is_json)
 	var_1 = request.json['var_1']
 	var_2 = request.json['var_2']
+	db.create_all()
+	val = input(var_1,var_2)
+	db.session.add(val)
+	db.session.commit()
 	# obj = json.loads(data)
 	# print(obj['var_1'])
 	#print(var_1)
