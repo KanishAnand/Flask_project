@@ -5,6 +5,7 @@ This a project in which we re-wrote the Representation of Integers and their ari
 
 ## Getting Started
 -----
+
 ```
 git clone the repository
 run front_end.py using python3
@@ -24,6 +25,11 @@ Flask-SQLAlchemy
 * [Flask](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
 * [Python](https://www.python.org) - To bring the project together
 * HTML,CSS and JS - For all the web development aspects
+
+## How we did this Project
+-------
+Since the main objective of this project was to rewrite an existing website using the flask web framework, We reused the already written code by Vlabs and arranged it into the correct formatting that Flask uses. We re-wrote the experiment section of the project using HTML,CSS and JavaScript and then sent the values to a python script which sent back the calculated answer. All this was done using AJAX's POST and GET requests. The quiz section of this project was implemented using a database which sent the selected options into the database on clicking the submit button. All the resources for the file are self-contained in the "static" folder and is loaded from the server side.
+The project was co-ordinated using GITHUB/GITLAB giving us an opportunity to learn how to do collaborative work as well.
 
 ## Theory
 -------
@@ -567,35 +573,35 @@ examples:
     2's complement example:
 
 
-	     1111 1111        -1
-	   x 1111 1001     x  -7
-      ----------------    ------
-	      11111111         7
-	     00000000
-	    00000000
-           11111111
-          11111111
-         11111111
-        11111111
-   +   11111111
-       ----------------
-        1  00000000111
-              --------  (correct answer underlined)
+    	     1111 1111        -1
+    	   x 1111 1001     x  -7
+          ----------------    ------
+    	      11111111         7
+    	     00000000
+    	    00000000
+               11111111
+              11111111
+             11111111
+            11111111
+       +   11111111
+           ----------------
+            1  00000000111
+                  --------  (correct answer underlined)
 
 
-	0011 (3)               0000 0011 (3)
-      x 1011 (-5)            x 1111 1011 (-5)
-      ------                 -----------
-	0011                    00000011
-       0011                    00000011
-      0000                    00000000
-   + 0011                    00000011
-   ---------                00000011
-     0100001               00000011
-  not -15 in any          00000011
-   representation!     + 00000011
-		      ------------------
-		              1011110001
+    	0011 (3)               0000 0011 (3)
+          x 1011 (-5)            x 1111 1011 (-5)
+          ------                 -----------
+    	0011                    00000011
+           0011                    00000011
+          0000                    00000000
+       + 0011                    00000011
+       ---------                00000011
+         0100001               00000011
+      not -15 in any          00000011
+       representation!     + 00000011
+    		      ------------------
+    		              1011110001
 
 			  take the least significant 8 bits 11110001 = -15
 
