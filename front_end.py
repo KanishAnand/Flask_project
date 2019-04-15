@@ -16,11 +16,29 @@ class input(db.Model):
 		self.value_1 = val_1
 		self.value_2 = val_2
 
+class submission(db.Model):
+	id = db.Column(db.Integer,primary_key=True)
+	sub = db.Column(db.Integer,unique=False)
+
+	def __init__(self,arr):
+		self.sub = arr;
+
 #ROUTES
 @app.route("/")
 @app.route("/introduction")
 def render_introduction():
 	return render_template("Introduction.html")
+
+@app.route("/quiz",methods=['GET','POST'])  
+def quiz():
+	#print("DfDFfDFd");
+	sub = request.json;
+	print(sub);
+	db.create_all()
+	sb = submission("4");
+	db.session.add(sb)
+	db.session.commit()
+	return "True";
 
 @app.route("/calculate",methods=['GET','POST'])  #TO CALCULATE THE ANSWERS WHEN TWO BINARY NUMBERS ARE SENT FOR PROCESSING
 def calculate():
