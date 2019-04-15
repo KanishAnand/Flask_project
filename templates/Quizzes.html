@@ -2,6 +2,18 @@
 <html lang="en">
 <head>
 
+		<style>
+		.qheader{
+		font:bold 14px Arial;
+		}
+
+		.qselections{
+		font:normal 13px Arial;
+		}
+		</style>
+
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +35,7 @@
 
     <!-- Custom CSS -->
     <link href="static/css/style.css" rel="stylesheet">
-	<script type="text/javascript" src = 'tabs.js'></script>
+	<!-- <script type="text/javascript" src = 'tabs.js'></script> -->
 <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-67020197-1', 'auto');ga('send', 'pageview');</script>
 </head>
 <body id="page-top" class="index">
@@ -100,7 +112,119 @@
 							<!--edit -->
 							<h1 class="text-h2-lightblue">Representation of Integers and their Arithmetic</h1><div class="content" id="experiment-article-section-6-content">
 							</div>
-							<p>This section will be updated soon.</p>			</div>
+
+							<div class="qheader" id="qs">
+1. The execution of a loop typically starts with: </div>
+<div class="qselections">
+<input type="radio" value="a" name="question1">a) initialization statements<br>
+<input type="radio" value="b" name="question1">b) Loop body<br>
+<input type="radio" value="c" name="question1">c) test condition<br>
+<input type="radio" value="d" name="question1">d) update statements<br>
+</div>
+
+<br>
+
+<div class="qheader">
+2) The break statement is used to exit from:</div>
+<div class="qselections">
+<input type="radio" value="a" name="question2">a) an if statement<br></input>
+<input type="radio" value="b" name="question2">b) a for loop<br>
+<input type="radio" value="c" name="question2">c) a program<br>
+<input type="radio" value="d" name="question2">d) the main( ) function<br>
+</div>
+
+<br>
+
+<div class="qheader">
+3) A do-while loop is useful when we want that the statements within the loop must be executed</div>
+<div class="qselections">
+<input type="radio" value="a" name="question3">a) only once<br>
+<input type="radio" value="b" name="question3">b) At Least Once<br>
+<input type="radio" value="c" name="question3">c) More than once<br>
+<input type="radio" value="d" name="question3">d) None of the above<br>
+</div>
+
+<br>
+
+<div class="qheader">
+4) In what sequence the initialization, testing and execution of body is done in a do-while loop </div>
+<div class="qselections">
+<input type="radio" value="a" name="question4">a) Initialization, execution of body, testing<br></input>
+<input type="radio" value="b" name="question4">b) Execution of body, initialization, testing<br>
+<input type="radio" value="c" name="question4">c) Initialization, testing, execution of body<br>
+<input type="radio" value="d" name="question4">d) None of the above<br>
+</div>
+
+<br>
+
+<div class="qheader">
+5) Which looping process checks the test condition at the end of the loop?</div>
+<div class="qselections">
+<input type="radio" value="a" name="question5">a) for<br>
+<input type="radio" value="b" name="question5">b) while<br>
+<input type="radio" value="c" name="question5">c) do-while<br>
+<input type="radio" value="d" name="question5">d) No looping peocess check condition at the end<br>
+</div>
+
+<br>
+							</div>
+							<script>
+							function gradeit(){
+								var arr =[];
+									var sb = document.getElementsByName('question1');
+									for(var i=0;i<sb.length;i++){
+										if(sb[i].checked){
+											console.log(i+1);
+											arr.push(i+1);
+										}
+									}
+									var sb = document.getElementsByName('question2');
+									for(var i=0;i<sb.length;i++){
+										if(sb[i].checked){
+											console.log(i+1);
+											arr.push(i+1);
+										}
+									}
+									var sb = document.getElementsByName('question3');
+									for(var i=0;i<sb.length;i++){
+										if(sb[i].checked){
+											console.log(i+1);
+											arr.push(i+1);
+										}
+									}
+									var sb = document.getElementsByName('question4');
+									for(var i=0;i<sb.length;i++){
+										if(sb[i].checked){
+											console.log(i+1);
+											arr.push(i+1);
+										}
+									}
+									var sb = document.getElementsByName('question5');
+									for(var i=0;i<sb.length;i++){
+										if(sb[i].checked){
+											console.log(i+1);
+											arr.push(i+1);
+										}
+									}
+
+														
+						          $.ajax({
+						            url:"http://localhost:5000/quiz",
+						            type:'POST',
+						            data: JSON.stringify(arr),
+						            contentType: 'application/json; charset=utf-8',
+						            dataType:'json',
+						     	   });
+								console.log(arr);
+							}
+							</script>
+					
+
+							</div>
+							<div align="center">
+							<input type="button" value="SUBMIT" name="B1" onClick="gradeit()">
+							
+
 												</div>
 										</div>
 			<!-- =================================================================================================================================== -->
