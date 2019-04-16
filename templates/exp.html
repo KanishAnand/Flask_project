@@ -76,7 +76,7 @@
           };
           $.ajax({
             url:"http://localhost:5000/calculate",
-            type:'GET',
+            type:'POST',
             data: JSON.stringify(arr),
             contentType: 'application/json; charset=utf-8',
             dataType:'json',
