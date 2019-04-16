@@ -112,7 +112,7 @@
 							<!--edit -->
 							<h1 class="text-h2-lightblue">Representation of Integers and their Arithmetic</h1><div class="content" id="experiment-article-section-6-content">
 							</div>
-
+<!--==========================================================================IMPLEMENTATION OF QUIZ QUESTIONS=================================================================================================================-->
 							<div class="qheader" id="qs">
 1. The execution of a loop typically starts with: </div>
 <div class="qselections">
@@ -169,7 +169,7 @@
 <br>
 							</div>
 							<script>
-							function gradeit(){
+							function gradeit(){  //Function to send quiz submission to the database
 								var arr =[];
 									var sb = document.getElementsByName('question1');
 									for(var i=0;i<sb.length;i++){
@@ -207,23 +207,23 @@
 										}
 									}
 
-														
+
 						          $.ajax({
 						            url:"http://localhost:5000/quiz",
 						            type:'POST',
 						            data: JSON.stringify(arr),
 						            contentType: 'application/json; charset=utf-8',
-						            dataType:'json',
+						            dataType:'json', //The quiz answers are sent in JSON format
 						     	   });
 								console.log(arr);
 							}
 							</script>
-					
+
 
 							</div>
 							<div align="center">
 							<input type="button" value="SUBMIT" name="B1" onClick="gradeit()">
-							
+
 
 												</div>
 										</div>

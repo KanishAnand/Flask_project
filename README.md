@@ -30,6 +30,12 @@ Flask-SQLAlchemy
 -------
 Since the main objective of this project was to rewrite an existing website using the flask web framework, We reused the already written code by Vlabs and arranged it into the correct formatting that Flask uses. We re-wrote the experiment section of the project using HTML,CSS and JavaScript and then sent the values to a python script which sent back the calculated answer. All this was done using AJAX's POST and GET requests. The quiz section of this project was implemented using a database which sent the selected options into the database on clicking the submit button. All the resources for the file are self-contained in the "static" folder and is loaded from the server side.
 The project was co-ordinated using GITHUB/GITLAB giving us an opportunity to learn how to do collaborative work as well.
+We also included unit testing by running some manual test-cases and checking the values by inputting them to the backend and checking the final result.
+
+## Unit Testing
+--------
+* Run the server by running ``` python3 front_end.py```
+* Run the unit tests by running ``` python3 test.py ```
 
 ## Theory
 -------

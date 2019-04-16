@@ -1,5 +1,5 @@
-from t import *
-from t_5 import *
+from adder_4bit import *
+from adder_5bit import *
 import json
 from flask import Flask, render_template,request
 from flask_sqlalchemy import SQLAlchemy
@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
 db=SQLAlchemy(app)
 
-class input(db.Model):
+class input(db.Model): #Class to implement database
 	id = db.Column(db.Integer,primary_key=True)
 	value_1 = db.Column(db.String(10),unique=False)
 	value_2 = db.Column(db.String(10),unique=False)
@@ -16,22 +16,16 @@ class input(db.Model):
 		self.value_1 = val_1
 		self.value_2 = val_2
 
-class submission(db.Model):
+class submission(db.Model): #Class to implement submission for quiz
 	id = db.Column(db.Integer,primary_key=True)
 	sub = db.Column(db.Integer,unique=False)
 
 	def __init__(self,arr):
 		self.sub = arr;
 
-#ROUTES
-@app.route("/")
-@app.route("/introduction")
-def render_introduction():
-	return render_template("Introduction.html")
-
-@app.route("/quiz",methods=['GET','POST'])
+#BACKEND_ROUTES
+@app.route("/quiz",methods=['GET','POST'])    #Quiz section backend implemented here
 def quiz():
-	#print("DfDFfDFd");
 	sub = request.json;
 	print(sub);
 	db.create_all()
@@ -42,9 +36,7 @@ def quiz():
 
 @app.route("/calculate",methods=['GET','POST'])  #TO CALCULATE THE ANSWERS WHEN TWO BINARY NUMBERS ARE SENT FOR PROCESSING
 def calculate():
-	print("dfs")
 	print(request.is_json)
-
 	var_1 = request.json['var_1']
 	var_2 = request.json['var_2']
 	db.create_all()
@@ -55,7 +47,6 @@ def calculate():
 
 @app.route("/calculate_5bit",methods=['GET','POST'])  #TO CALCULATE THE ANSWERS WHEN TWO BINARY 5-bit NUMBERS ARE SENT FOR PROCESSING
 def calculate_5bit():
-	#print("dfs")
 	print(request.is_json)
 	var_1 = request.json['var_1']
 	var_2 = request.json['var_2']
@@ -63,11 +54,13 @@ def calculate_5bit():
 	val = input(var_1,var_2)
 	db.session.add(val)
 	db.session.commit()
-	# obj = json.loads(data)
-	# print(obj['var_1'])
-	print(var_1)
-	print(var_2)
 	return fun_5bit(var_1,var_2);
+
+#FRONTEND_ROUTES
+@app.route("/")
+@app.route("/introduction")
+def render_introduction():
+	return render_template("Introduction.html")
 
 @app.route('/theory')
 def render_theory():
@@ -92,10 +85,6 @@ def render_exp_5bit():
 @app.route("/help")
 def render_help():
 	return render_template('help.html')
-
-@app.route('/function')
-def function():
-    return 5
 
 @app.route('/manual')
 def render_manual():

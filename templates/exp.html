@@ -20,11 +20,9 @@
   <script>
     var count = 0;
     var a=0,b=0;
-    //var jj = {};
     $(function(){                                      //Function to register clicks on the binary strings
       $('#usr_inp tr').on('click',function(){
           ++count;
-          //console.log(typeof(this))
           $(this).addClass("selected");
           c=$(this).find('td:eq(1)').text();
           if(count % 2 == 1){
@@ -43,7 +41,6 @@
           }
           console.log(a);
           console.log(b);
-          //alert("jksdf");
       });
     });
 
@@ -77,7 +74,6 @@
               var_1:a,
               var_2:b
           };
-         // $("tr").removeClass("selected");
           $.ajax({
             url:"http://localhost:5000/calculate",
             type:'GET',
@@ -88,15 +84,9 @@
               console.log(res);
               table_display(res);
               ans_display(res);
-              //console.log($.parseJSON(res));
             }
-            //console.log(JSON.parse(jj))
-
-            //async: true,
-            //document.getElementById("demo").innerHTML = "kanish"
           });
         });
-        //console.log($.parseJSON(jj));
     });
 
       function ans_display(obj){
@@ -111,10 +101,7 @@
             for(var j=0,col;col=row.cells[j];j++){
               $(col).removeClass("ans_output");
               var val=col.innerHTML;
-              //console.log(val);
-              //console.log("j");
               if(val == arr[j]){
-                //console.log("D");
                 $(col).addClass("ans_output");
               }
             }
@@ -130,22 +117,7 @@
       document.getElementById("r3").innerHTML = obj['One Complement'];
       document.getElementById("r4").innerHTML = obj['Unsigned Value'];
       document.getElementById("r5").innerHTML = obj['Signed Value'];
-      //ob = JSON.parse(obj);
-      //console.log(JSON.parse(obj));
     }
-    //console.log(jj);
-      // function val(){
-      //   //console.log("kanish")
-      //   var xhttp = new XMLHttpRequest();
-      //   xhttp.open("GET","http://localhost:5000/calculate",true);
-      //   xhttp.send();
-      //   xhttp.onreadystatechange = function(){
-      //     //console.log("kanish")
-      //     if(this.readyState == 4 && this.status == 200){
-      //       document.getElementById("demo").innerHTML = this.responesText;
-      //     }
-      //   }
-      // }
 
   </script>
   <!--=============USER INPUT TABLE================= -->
