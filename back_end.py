@@ -18,7 +18,7 @@ class input(db.Model): #Class to implement database
 
 class submission(db.Model): #Class to implement submission for quiz
 	id = db.Column(db.Integer,primary_key=True)
-	sub = db.Column(db.Integer,unique=False)
+	sub = db.Column(db.String(10),unique=False)
 
 	def __init__(self,arr):
 		self.sub = arr;
@@ -29,7 +29,7 @@ def quiz():
 	sub = request.json;
 	print(sub);
 	db.create_all()
-	sb = submission("4");
+	sb = submission(sub);
 	db.session.add(sb)
 	db.session.commit()
 	return "True";
