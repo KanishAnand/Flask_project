@@ -65,7 +65,7 @@ def fun_5bit(a,b):
 	result_unsigned = binary_sum
 	print(carry)
 	if carry == 1:
-		result_binary = "overflow(" + str(binary_val) + ")"
+		result_binary = "overflow (" + str(binary_val) + ")"
 	answer_binary = result_binary
 
 	result_unsigned = binary_sum
@@ -77,7 +77,7 @@ def fun_5bit(a,b):
 	b_signed = signed(arr_b)
 	result_signed = a_signed + b_signed
 	answer_signed = result_signed
-	
+
 	if(answer_signed == 0):
 	 	answer_signed = '+' + str(answer_signed)
 

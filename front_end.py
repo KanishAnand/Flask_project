@@ -29,7 +29,7 @@ class submission(db.Model):
 def render_introduction():
 	return render_template("Introduction.html")
 
-@app.route("/quiz",methods=['GET','POST'])  
+@app.route("/quiz",methods=['GET','POST'])
 def quiz():
 	#print("DfDFfDFd");
 	sub = request.json;
@@ -66,7 +66,7 @@ def calculate_5bit():
 	# obj = json.loads(data)
 	# print(obj['var_1'])
 	print(var_1)
-	sprint(var_2)
+	print(var_2)
 	return fun_5bit(var_1,var_2);
 
 @app.route('/theory')
