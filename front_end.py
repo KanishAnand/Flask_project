@@ -42,8 +42,8 @@ def quiz():
 
 @app.route("/calculate",methods=['GET','POST'])  #TO CALCULATE THE ANSWERS WHEN TWO BINARY NUMBERS ARE SENT FOR PROCESSING
 def calculate():
-	#print("dfs")
-	#print(request.is_json)
+	print("dfs")
+	print(request.is_json)
 
 	var_1 = request.json['var_1']
 	var_2 = request.json['var_2']
@@ -56,7 +56,7 @@ def calculate():
 @app.route("/calculate_5bit",methods=['GET','POST'])  #TO CALCULATE THE ANSWERS WHEN TWO BINARY 5-bit NUMBERS ARE SENT FOR PROCESSING
 def calculate_5bit():
 	#print("dfs")
-	#print(request.is_json)
+	print(request.is_json)
 	var_1 = request.json['var_1']
 	var_2 = request.json['var_2']
 	db.create_all()
@@ -65,8 +65,8 @@ def calculate_5bit():
 	db.session.commit()
 	# obj = json.loads(data)
 	# print(obj['var_1'])
-	#print(var_1)
-	#print(var_2)
+	print(var_1)
+	sprint(var_2)
 	return fun_5bit(var_1,var_2);
 
 @app.route('/theory')
