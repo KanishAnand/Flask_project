@@ -34,7 +34,7 @@ We also included unit testing by running some manual test-cases and checking the
 
 ## Unit Testing
 --------
-* Run the server by running ``` python3 front_end.py```
+* Run the server by running ``` python3 back_end.py```
 * Run the unit tests by running ``` python3 test.py ```
 
 ## Theory
