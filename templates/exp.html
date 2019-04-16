@@ -80,7 +80,7 @@
          // $("tr").removeClass("selected");
           $.ajax({
             url:"http://localhost:5000/calculate",
-            type:'POST',
+            type:'GET',
             data: JSON.stringify(arr),
             contentType: 'application/json; charset=utf-8',
             dataType:'json',
