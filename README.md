@@ -1,14 +1,14 @@
 # ISS-Assignment-4-Representation of Integers and their Arithmetic
 -------
 
-This a project in which we re-wrote the Representation of Integers and their arithmetic experiment from Vlabs using Flask and python fullstack.
+This a project in which we re-wrote the Representation of Integers and their arithmetic experiment from Vlabs using Flask and a python fullstack.
 
 ## Getting Started
 -----
 
 ```
 git clone the repository
-run front_end.py using python3
+run back_end.py using python3
 open localhost:5000 on your webrowser and the website should run
 
 ```
@@ -29,7 +29,9 @@ Flask-SQLAlchemy
 ## How we did this Project
 -------
 Since the main objective of this project was to rewrite an existing website using the flask web framework, We reused the already written code by Vlabs and arranged it into the correct formatting that Flask uses. We re-wrote the experiment section of the project using HTML,CSS and JavaScript and then sent the values to a python script which sent back the calculated answer. All this was done using AJAX's POST and GET requests. The quiz section of this project was implemented using a database which sent the selected options into the database on clicking the submit button. All the resources for the file are self-contained in the "static" folder and is loaded from the server side.
+
 The project was co-ordinated using GITHUB/GITLAB giving us an opportunity to learn how to do collaborative work as well.
+
 We also included unit testing by running some manual test-cases and checking the values by inputting them to the backend and checking the final result.
 
 ## Unit Testing
@@ -39,7 +41,7 @@ We also included unit testing by running some manual test-cases and checking the
 
 ## Design Pattern
 ---------
-* Factory method - Many instance of the class 'submission' and 'input' have can be made as per requirement. 
+* Factory method - Many instance of the class 'submission' and 'input' have can be made as per requirement.
 
 ## Theory
 -------
