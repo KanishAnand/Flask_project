@@ -697,7 +697,7 @@ examples:
 
 ## Authors
 
-* **Kanish Anand** - [KanishAnand](https://github.com/https://github.com/KanishAnand)
+* **Kanish Anand** - [KanishAnand](https://github.com/KanishAnand)
 * **Shourja Mukherjee** -  [ShourjaMukherjee](https://github.com/ShourjaMukherjee)
 
 ## Acknowledgments
