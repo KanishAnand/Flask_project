@@ -37,6 +37,10 @@ We also included unit testing by running some manual test-cases and checking the
 * Run the server by running ``` python3 back_end.py```
 * Run the unit tests by running ``` python3 test.py ```
 
+## Design Pattern
+---------
+* Factory method - Many instance of the class 'submission' and 'input' have can be made as per requirement. 
+
 ## Theory
 -------
 #### ALL ABOUT INTEGER REPRESENTATION.
